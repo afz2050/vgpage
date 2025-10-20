@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 500,
+  "height": 300,
+  "title": "Household Expenditure Across States",
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/afz2050/vgpage/refs/heads/master/data/msia_states_final.json",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_10m_ocean"
+        }
+      },
+      "projection": {
+        "type": "equalEarth"
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightblue",
+        "stroke": "black"
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/afz2050/vgpage/refs/heads/master/data/msia_states_final.json",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_10m_admin_0_countries"
+        }
+      },
+      "projection": {
+        "type": "equalEarth"
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "silver",
+        "stroke": "black"
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/afz2050/vgpage/refs/heads/master/data/msia_states_final.json",
+        "format": {
+          "type": "topojson",
+          "feature": "my"
+        }
+      },
+      "projection": {
+        "type": "equalEarth"
+      },
+      "transform": [
+        {
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/afz2050/vgpage/refs/heads/master/data/hies_state.csv"
+            },
+            "key": "state",
+            "fields": ["expenditure_mean"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "black"
+      },
+      "encoding": {
+        "color": {
+          "field": "expenditure_mean",
+          "type": "quantitative",
+          "scale": {"scheme":"reds"},
+          "legend": {"title": "Mean Income"}
+        },
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "State"},
+          {"field": "expenditure_mean", "title": "Mean Expenditure"}
+        ]
+      }
+    }
+  ]
+}
