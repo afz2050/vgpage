@@ -1,0 +1,111 @@
+/* === Global Layout === */
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fb;
+  color: #222;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 12%;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+  margin: 0; /* Removes default body margin */
+}
+
+/* === Headings === */
+h1 {
+  font-size: 2.2rem;
+  color: #1b365d;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: #1b365d;
+  border-left: 5px solid #1b365d;
+  padding-left: 12px;
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+/* === Paragraphs === */
+p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 800px;
+  margin: 0.5rem auto 1rem;
+  text-align: justify;
+}
+
+/* === Chart Containers === */
+div[id^="cpi_"],
+#income,
+#expense {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin: 1.5rem auto 2rem;
+  padding: 1rem;
+  max-width: 900px;
+}
+
+/* Center visualisations */
+.vega-embed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Links === */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Footer or Summary Section === */
+h2:last-of-type {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+p:last-of-type {
+  margin-bottom: 3rem;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  body {
+    padding: 0 6%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  div[id^="cpi_"],
+  #income,
+  #expense {
+    padding: 0.75rem;
+  }
+}

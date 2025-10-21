@@ -84,21 +84,6 @@
               "fillOpacity": {"value": 0.1}
             }            
           }
-        },
-        {
-          "type": "text",
-          "name": "value-text",
-          "from": {"data": "category-line"},
-          "encode": {
-            "enter": {
-              "x": {"signal": "datum.x"},
-              "y": {"signal": "datum.y"},
-              "text": {"signal": "datum.datum.value"},
-              "align": {"value": "center"},
-              "baseline": {"value": "middle"},
-              "fill": {"value": "black"}
-            }
-          }
         }
       ]
     },
