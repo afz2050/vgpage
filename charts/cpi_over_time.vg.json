@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 500,
+  "height": 300,
+  "title": "CPI over time",
+  "data": {
+    "url": "https://raw.githubusercontent.com/afz2050/vgpage/refs/heads/master/data/cpi_2d_annual.csv"
+  },
+  "transform": [
+    {"filter": "datum.division == 'overall'"},
+    {"filter": {"field": "date", "gt": {"year":2002}}}
+  ],
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "date", "type": "temporal"},
+    "y": {"field": "index", "type": "quantitative"},
+    "tooltip": [
+      {"field": "date", "type": "temporal", "timeUnit": "yearmonth", "title": "Date"},
+      {"field": "index", "type": "quantitative", "title": "CPI", "format": ".2f"}
+    ]
+  }
+}
