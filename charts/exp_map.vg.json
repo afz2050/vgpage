@@ -2,7 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": 500,
   "height": 300,
-  "title": "Household Expenditure Across States",
+  "title": {
+    "text": "Household Expenditure Across States",
+    "fontSize": 20
+  },
   "layer": [
     {
       "data": {

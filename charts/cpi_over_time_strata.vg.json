@@ -2,7 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": 500,
   "height": 300,
-  "title": "CPI over time",
+  "title": {
+    "text": "CPI over time",
+    "fontSize": 20
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/afz2050/vgpage/refs/heads/master/data/cpi_2d_strata.csv"
   },

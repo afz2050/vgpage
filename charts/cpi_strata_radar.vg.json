@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
-  "title": "Urban vs Rural CPI",
+  "title": {
+    "text": "Urban vs Rural CPI",
+    "fontSize": 20
+  },
   "description": "A radar chart example, showing multiple dimensions in a radial layout.",
   "width": 800,
   "height": 270,

@@ -2,7 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": 500,
   "height": 300,
-  "title": "Household Income Across States",
+  "title": {
+    "text": "Household Income Across States",
+    "fontSize": 20
+  },
   "layer": [
     {
       "data": {
