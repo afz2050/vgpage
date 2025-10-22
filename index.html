@@ -4,63 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
     <script src="vega_lite_vis.js"></script>
     <link rel="stylesheet" href="styles.css">
 
     <title>Cost of Living In Malaysia</title>
 </head>
 <body>
+  <main>
     <h1>Cost of Living and Expenditure in Malaysia</h1>
     <p class="subtitle">By Afras Ashraf (33803218)</p>
-    <p>Over the past decade, Malaysians have faced steadily increasing living costs.
-From basic groceries to housing and transport, price changes affect every household — but not all regions or income groups experience these changes equally.</p>
-    <p>This visualisation explores how prices, inflation patterns, and household affordability differ across Malaysia using data from the Department of Statistics Malaysia (DOSM).</p>
 
-    <h2>Price Changes Across Categories</h2>
-    <p>Not all goods and services have risen in price at the same rate.</p>
-    <p>This grouped bar chart shows how CPI values for major item groups (such as Food, Housing, and Transport) have changed over recent years.</p>
+    <p>Over the past decade, Malaysians have faced steadily increasing living costs. From basic groceries to housing and transport, price changes affect every household — but not all regions or income groups experience these changes equally.</p>
 
-    <div id="cpi_group"></div>
+    <p>This visualisation explores how prices, inflation patterns, and household affordability differ across Malaysia</p>
 
-    <p>You can observe that Food and Non-Alcoholic Beverages consistently remain the largest contributor to inflation, followed by Housing, Utilities, and Transport.</p>
+    <!-- Section 1 -->
+    <section>
+      <div>
+        <h2>Price Changes Across Categories</h2>
+        <p>Not all goods and services have risen in price at the same rate.</p>
+        <p>You can observe that Food and Non-Alcoholic Beverages consistently remain the largest contributor to inflation, followed by Housing, Utilities, and Transport.</p>
+      </div>
+      <div id="cpi_group" class="chart"></div>
+    </section>
 
-    <h2>Inflation Trends Over Time</h2>
-    <p>The line chart below shows Malaysia’s CPI trend over time, representing the overall change in the cost of living.</p>
-    <p>Notice the periods where inflation rose sharply — around 2014–2015 (fuel subsidy removals), 2018 (GST to SST transition), and 2022–2023 (global price surges).</p>
-    
-    <div id="cpi_time"></div>
-    <p>This steady upward trajectory reflects how the purchasing power of the Ringgit has gradually weakened over the years.</p>
+    <!-- Section 2 -->
+    <section>
+      <div>
+        <h2>Inflation Trends Over Time</h2>
+        <p>The line chart here shows Malaysia's CPI trend over time, representing the overall change in the cost of living</p>
+      </div>
+      <div id="cpi_time" class="chart"></div>
+    </section>
 
-    <h2>Urban vs Rural Differences</h2>
-    <p>The cost of living gap between urban and rural areas is clearly visible in the CPI data.</p>
-    <p>While rural areas tend to have lower housing and service costs, urban residents face higher prices for transport, rent, and food.</p>
+    <!-- Section 3 -->
+    <section>
+      <div>
+        <h2>Urban vs Rural Differences</h2>
+        <p>The cost of living gap between urban and rural areas is clearly visible in the CPI data.</p>
+      </div>
+      <div id="cpi_time_strata" class="chart"></div>
+    </section>
 
-    <p>The first line chart shows how CPI trends differ across strata over time.</p>
-    <p>The radar chart below compares CPI values for key goods (like food, housing, and transport) between urban and rural strata.</p>
+    <section id="summary">
+      <div>
+        <h2>Urban vs Rural Inflation</h2>
+        <div class="box">
+            <p>The specific groups that have the most inflation can be seen here.</p>
+            <p>While rural areas tend to have lower housing and service costs, urban residents face higher prices for transport, rent, and food.</p>
+            <div id="cpi_radar" class="chart"></div>
+        </div>
+      </div>
+    </section>
 
-    <div id="cpi_time_strata"></div>
-    <div id="cpi_radar"></div>
-    <p>These charts highlight that urban households experience faster price increases, especially in transport and utilities.</p>
+    <section>
+      <div>
+        <h2>Household Income</h2>
+        <p>States such as Kuala Lumpur, Selangor, and Putrajaya record the highest household incomes, reflecting their more urbanised economies and higher-paying industries.</p>
+        <p>In contrast, Kelantan, Perlis, and Sabah have significantly lower average incomes, highlighting the continued urban-rural income gap across the country.</p>
+      </div>
+      <div id="income" class="chart"></div>
+    </section>
 
-    <h2>Affordability Across States</h2>
-    <p>While national CPI shows an overall increase, cost of living pressures vary widely across states.</p>
-    <p>The map below compares average household expenditure and income for each state, showing which regions face higher financial strain.</p>
-    <div id="income"></div>
-    <div id="expense"></div>
-    <p>States like Kuala Lumpur, Selangor, and Penang show higher spending due to urban costs.</p>
-    <p>States such as Kelantan and Perlis show lower expenditures but also lower incomes.</p>
+    <section>
+      <div>
+        <h2>Household Expenditure</h2>
+        <p>Spending patterns tend to follow income levels — households in urban states such as Kuala Lumpur, Selangor, and Penang spend considerably more per month, largely due to higher housing, transport, and food costs.</p>
+        <p>Meanwhile, rural and northern states such as Kelantan, Perlis, and Terengganu have lower overall expenditures, reflecting both lower living costs and lower disposable incomes.</p>
+      </div>
+      <div id="expense" class="chart"></div>
+    </section>
 
-    <h2>Summary and Insights</h2>
-    <p>Malaysia’s overall CPI has steadily increased from 2010 to 2025.</p>
+    <!-- Summary -->
+    <section id="summary">
+    <div class="box">
+      <h2>Summary and Insights</h2>
+        <p>Malaysia's overall CPI has steadily increased from 2010 to 2025.</p>
+        <p>Food, housing, and transport remain the primary cost drivers.</p>
+        <p>Urban households experience higher inflation rates than rural ones.</p>
+      </div>
+    </section>
+  </main>
 
-<p>Food, housing, and transport remain the primary cost drivers.</p>
-
-<p>Urban households experience higher inflation rates than rural ones.</p>
-
-<p>Income growth has not kept pace with rising living costs, leading to affordability concerns in major cities.</p>
-
-
+  <footer>
+    <p>Data Source: <a href="https://open.dosm.gov.my/data-catalogue">Department of Statistics Malaysia (DOSM)</a></p>
+    <p>Created by Afras Ashraf (33803218) | FIT3179 - Data Visualisation 2</p>
+  </footer>
 </body>
 </html>
